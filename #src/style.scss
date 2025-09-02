@@ -1,0 +1,47 @@
+@import "./reset.scss";
+$color-white: #e5e7eb;
+$color-black: #212936;
+$color-gray: #4d5562;
+$color-dark-gray: #394150;
+$color-light-gray: #a1a1a9;
+$color-violet: #5425af;
+$color-light-violet: #845eee;
+$bg-color: #121826;
+$text-styles: (
+  heading-text: (
+    font-size: 1.25rem,
+    font-weight: 600,
+    color: $color-gray,
+  ),
+  tab-text: (
+    font-size: 0.875rem,
+    font-weight: 600,
+    color: $color-gray,
+  ),
+  body-text: (
+    font-size: 1rem,
+    font-weight: 400,
+    color: $color-gray,
+  ),
+  label-text: (
+    font-size: 0.75rem,
+    font-weight: 400,
+    color: $color-white,
+  ),
+  small-text: (
+    font-size: 0.75rem,
+    font-weight: 400,
+    color: $color-white,
+  ),
+);
+@mixin text-format($type) {
+  font-size: map-get(map-get($text-styles, $type), font-size);
+  font-weight: map-get(map-get($text-styles, $type), font-weight);
+  color: map-get(map-get($text-styles, $type), color);
+}
+.wrapper {
+  min-height: 100vh;
+  min-width: 100%;
+  background-color: $bg-color;
+  font-family: "Inter", sans-serif;
+}
