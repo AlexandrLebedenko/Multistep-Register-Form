@@ -8,7 +8,7 @@
 
 ## <a id="general-info">⭐ General info</a>
 
-A fun and interactive browser-based game where players must guess the correct word using a limited number of attempts. The letters are shuffled, and the challenge is to restore the correct order. The game tracks mistakes and attempts, offering a new random word each round.
+A simple and user-friendly registration form consisting of three steps. This project demonstrates a smooth user interface with input validation and a summary on the final step.
 
 ## <a id="Preview">🖼️ Preview</a>
 
