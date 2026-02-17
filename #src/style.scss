@@ -1,0 +1,185 @@
+@import "./reset.scss";
+$color-white: #e5e7eb;
+$color-black: #030616;
+$color-light-gray: #a1a1a9;
+$color-gray: #4d5562;
+$color-dark-gray: #394150;
+$color-violet: #5425af;
+$color-light-violet: rgba(132, 94, 238, 0.3);
+$form-bg-color: #212936;
+$bg-color: #121826;
+$text-styles: (
+  heading-text: (
+    logo-size: 1.25rem,
+    font-weight: 500,
+    color: $color-white,
+  ),
+  body-text: (
+    font-size: 1rem,
+    font-weight: 400,
+    color: $color-white,
+  ),
+  tab-text: (
+    font-size: 0.875rem,
+    font-weight: 400,
+    color: $color-white,
+  ),
+  small-text: (
+    font-size: 0.75rem,
+    font-weight: 400,
+    color: $color-white,
+  ),
+);
+@mixin text-format($type) {
+  font-size: map-get(map-get($text-styles, $type), font-size);
+  font-weight: map-get(map-get($text-styles, $type), font-weight);
+  color: map-get(map-get($text-styles, $type), color);
+}
+.wrapper {
+  min-height: 100vh;
+  min-width: 100%;
+  background-color: $bg-color;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  background-color: $form-bg-color;
+  border-radius: 1rem;
+  width: 28.5rem;
+  padding: 2.5rem;
+  margin-bottom: 1rem;
+  &__title {
+    @include text-format(heading-text);
+    margin-bottom: 1.5rem;
+  }
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.25rem;
+  max-height: fit-content;
+}
+.content--hidden {
+  display: none;
+}
+// 1 step
+.data-inputs {
+  @include text-format(small-text);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__input {
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid $color-light-gray;
+    &::placeholder {
+      @include text-format(small-text);
+    }
+  }
+}
+// 2 step
+.topics {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  @include text-format(tab-text);
+  &__item {
+    border-radius: 1rem;
+    background-color: $color-dark-gray;
+    border: 1px solid $color-gray;
+    color: $color-light-gray;
+    cursor: pointer;
+  }
+  &__item--active {
+    @include text-format(tab-text);
+    background-color: $color-violet;
+    border-color: $color-light-violet;
+  }
+
+  &__checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  label {
+    padding: 1rem;
+    border-radius: 1rem;
+    display: block;
+    user-select: none;
+  }
+}
+// 3 step
+.user-data {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  @include text-format(body-text);
+  color: $color-light-gray;
+  span {
+    color: $color-white;
+  }
+}
+.topics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  @include text-format(body-text);
+  &__title {
+    color: $color-light-gray;
+  }
+  &__item {
+    list-style: initial;
+    margin-left: 1.625rem;
+    &:empty {
+      display: none;
+    }
+  }
+}
+// forms button
+.form-button {
+  @include text-format(tab-text);
+  display: block;
+  background: linear-gradient(180deg, #845eee 0%, #652cd1 100%);
+  padding: 0.75rem 2.25rem;
+  border-radius: 2.375rem;
+  margin: auto;
+}
+//pagionation
+.pagination-field {
+  @include text-format(small-text);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+.pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.375rem;
+  &__point {
+    border-radius: 50%;
+    border: 5px solid rgba(0, 0, 0, 0);
+    span {
+      display: block;
+      height: 10px;
+      width: 10px;
+      background-color: $color-violet;
+      border-radius: 50%;
+      aspect-ratio: 1/1;
+    }
+  }
+  &__point--active {
+    border: 5px solid $color-light-violet;
+  }
+}

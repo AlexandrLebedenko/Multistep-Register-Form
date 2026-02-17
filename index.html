@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./scripts/index.js" defer></script>
+    <title>Multistep Registration Form</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form class="form" id="form-field">
+        <div class="content" id="first-step">
+          <h3 class="form__title">Register</h3>
+          <div class="data-inputs">
+            <label class="data-inputs__item">
+              Name
+              <input class="data-inputs__input" id="name-input" type="text" placeholder="Enter your name" />
+            </label>
+            <label class="data-inputs__item">
+              Email
+              <input class="data-inputs__input" id="email-input" type="email" placeholder="Example@gmail.com" />
+            </label>
+          </div>
+        </div>
+        <div class="content content--hidden" id="second-step">
+          <h3 class="form__title">Which topics you are interested in?</h3>
+          <ul class="topics">
+            <li class="topics__item">
+              <input class="topics__checkbox" id="checkboxOne" type="checkbox" value="Software Development" />
+              <label for="checkboxOne">Software Development</label>
+            </li>
+            <li class="topics__item">
+              <input class="topics__checkbox" id="checkboxTwo" type="checkbox" value="User Experience" />
+              <label for="checkboxTwo">User Experience</label>
+            </li>
+            <li class="topics__item">
+              <input class="topics__checkbox" id="checkboxThree" type="checkbox" value="Graphic Design" />
+              <label for="checkboxThree">Graphic Design</label>
+            </li>
+          </ul>
+        </div>
+        <div class="content content--hidden" id="third-step">
+          <h3 class="form__title">Summary</h3>
+          <div class="user-data">
+            <p class="user-data__name">Name: <span id="name"></span></p>
+            <p class="user-data__email">Email: <span id="email"></span></p>
+          </div>
+          <div class="topics-list">
+            <span class="topics-list__title">Topics:</span>
+            <ul>
+              <li class="topics-list__item"></li>
+              <li class="topics-list__item"></li>
+              <li class="topics-list__item"></li>
+            </ul>
+          </div>
+        </div>
+        <button class="form-button">Continue</button>
+      </form>
+      <div class="pagination-field">
+        <p>Step <span class="pagination-counter">1</span> of 3</p>
+        <ul class="pagination">
+          <li class="pagination__point pagination__point--active">
+            <span></span>
+          </li>
+          <li class="pagination__point">
+            <span></span>
+          </li>
+          <li class="pagination__point">
+            <span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
